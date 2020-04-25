@@ -1,0 +1,6 @@
+.vscode/
+*.rdb
+
+venv/
+env/
+__pycache__/
