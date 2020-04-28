@@ -10,8 +10,9 @@ You work in a digital company as a consultant. You have been assigned on a fresh
 ## How to use it
 
 ### Installation
-1.If you don't have Python installed yet, [get it here](https://www.python.org/downloads/)
-2.You will also need Redis to make querie, just follow [instructions](https://redis.io/download) to install it.
+1. If you don't have Python installed yet, [get it here](https://www.python.org/downloads/)
+2. A docker environment is provided to run Redis whatever your os is. It is composed of three containers : a redis server, a redis client and a phpRedisAdmin. Simply open a terminal in "redis-docker" folder path and run `docker-compose -d up`. If you just want to use your own version of Redis, you can install it [here](https://redis.io/download)
+3. 
 
 ### Setup and Run
 1. Since Redis runs on default configurations, just open a terminal and run `redis-server`
