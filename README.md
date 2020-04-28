@@ -66,8 +66,9 @@ I you want to read more about geospatial data in DBMS : https://www.nap.edu/read
 
 ### Elasticsearch and Kibana
 <p align="justify">
-  Elasticsearch offers a great flexibility when it's about data types. It can manage different types of queries and even merge them.       Providing very fast results whatever the type or the conception, Elasticsearch allows you to personalize your environment (store as     much metadata as you want) in order be best suited to your needs. Paired with Kibana map solution, it makes possible an intuitive       integration of geospatial data layers into temporal data. With this tool, you can build your own personalized dashboard and see the     evolution of your data in real-time.  
-  It represents a great alternative, as it does not look very complex thanks to well documented solutions and its user-friendly           interfaces.
+  Elasticsearch offers a great flexibility when it's about data types. It can manage different types of queries and even merge them.       Providing very fast results whatever the type or the conception, Elasticsearch allows you to personalize your environment (store as     much metadata as you want) in order be best suited to your needs. Paired with Kibana map solution, it makes possible an intuitive       integration of geospatial data layers into temporal data. With this tool, you can build your own personalized dashboard and see the     evolution of your data in real-time.
 </p>
+
+It represents a great alternative, as it does not look very complex thanks to well documented solutions and its user-friendly           interfaces. Read more about Elasticsearch and Kibana for geospatial data : https://www.elastic.co/fr/maps
 
 ### PUB/SUB with Redis
