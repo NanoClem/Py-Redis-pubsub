@@ -28,7 +28,7 @@ You found out that Redis manages perfectly geospacial data, so you decided to te
 </p>  
 
 ### Get all job ads within a radius around a city
-Pretty simple for your experienced programmer's skills. You just used [this](https://redis.io/commands/georadius):
+Pretty simple for your experienced programmer's skills. You just used [this](https://redis.io/commands/georadius) :
 ```bash
 GEORADIUS yourkey long lat radius km WITHCOORD WITHDIST
 ```
@@ -42,6 +42,13 @@ Since you want to cover as much possibilties as you can, you decided to lead add
 </p>  
 
 ### Geospatial in other main DBMS
+
+#### PostGIS
+<p align="justify">
+It is a spatial database extender for PostgreSQL object-relationnal database. It adds support for geographic objects allowing location queries to be run in SQL. Could be useful to associate as much information (metadata) as you want to a location, since it just adds a geographic dimension to sql objects.
+</p>
+
+####
 
 ### Elasticsearch and Kibana
 
