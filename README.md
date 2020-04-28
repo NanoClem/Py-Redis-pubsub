@@ -27,5 +27,9 @@ You found out that Redis manage perfectly geospacial data, so you decided to tes
 </p>  
 
 <p align="justify">
-Pretty simple for your experienced programmer's skills. You just had to use GEORADIUS which gives you the members of your dataset which are within the radius of given coords (see [here](https://redis.io/commands/georadius) the command). It only needs coords (long, lat) of a city, a radius (either in meter/km/miles/feet) and some optional parameter such as WITHCOORD/WITHDIST/WITHASH to diplsay informations about job ads.
+Pretty simple for your experienced programmer's skills. You just used :
+```bash
+GEORADIUS yourkey long lat radius km WITHCOORD WITHDIST
+```
+This command gives you all members which are within the radius of given coords (see [here](https://redis.io/commands/georadius) the command). It only needs coords (long, lat) of a city, a radius (either in meter/km/miles/feet) and some optional parameter such as WITHCOORD/WITHDIST to diplsay informations about job ads.
 </p>  
