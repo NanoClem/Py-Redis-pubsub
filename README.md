@@ -22,4 +22,6 @@ You have two different ways of using a client interface :
 2. Open a web browser and search `localhost:your_port` (8081 by default) to get the php interface.
 
 ## Benchmark
-You found out that Redis manage perfectly geospacial data, so you decided to test it out with some datasets that you found on the web (see the data folder). You're able to find all places within a given radius, with all their informations. Now, to meet your customer's expectations, you have to find out how to get job ad within a given radius around a city. 
+<p align="justify">
+You found out that Redis manage perfectly geospacial data, so you decided to test it out with some datasets that you found on the web (see the data folder). You're able to find all places within a given radius, with all their informations. Now, to meet your customer's expectations, you have to find out how to get job ad within a given radius around a city.
+</p>
