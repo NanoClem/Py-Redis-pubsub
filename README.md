@@ -32,5 +32,5 @@ Pretty simple for your experienced programmer's skills. You just used :
 GEORADIUS yourkey long lat radius km WITHCOORD WITHDIST
 ```
 <p align="justify">
-This command gives you all members which are within the radius of given coords (see [here](https://redis.io/commands/georadius) the command). It only needs coords (long, lat) of a city, a radius (either in meter/km/miles/feet) and some optional parameter such as WITHCOORD/WITHDIST to diplsay informations about job ads.
+This [command] (https://redis.io/commands/georadius) gives you all members which are within the radius of given coords. It only needs coords (long, lat) of a city, a radius (either in meter/km/miles/feet) and some optional parameter such as WITHCOORD/WITHDIST to diplsay informations about job ads.
 </p>  
