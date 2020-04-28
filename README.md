@@ -78,3 +78,24 @@ Let's assume that we decided to develop an app allowing a job seeker to subsribe
 <p align="justify>
   Since we are in a "publish-subscribe" conception, our job ads platform represents the brocker, a bridge for data delivery between the   sender and the receiver. We want to keep data about both sides, because it will give us informations about habits and behavior, with     the aim to find a trend.
 </p>
+
+### Implementation
+You can run the docker configuration to get a full Redis environment.  
+
+The first step is to create our receiver :
+```python
+# connect with redis server as job_seeker (default configs)
+r1 = redis.Redis(host='localhost', port=6379)
+job_seeker = r1.pubsub()
+# subscribe to any offer within 30km of the given place
+job_seeker.subscribe('job_ads')
+```
+
+Then, we should create our sender :
+```python
+# connect with redis server as job_advertiser (default configs)
+r2 = redis.Redis(host='localhost', port=6379)
+# create a job add and publish it
+new_ad = 
+job_adv.publish('job_ads', new_ad)
+```
