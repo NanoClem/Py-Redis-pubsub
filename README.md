@@ -13,8 +13,9 @@ You work in a digital company as a consultant. You have been assigned on a fresh
 
 ### Installation
 1. If you don't have Python installed yet, [get it here](https://www.python.org/downloads/).
-2. A docker environment is provided to run Redis whatever your os is. It is composed of three containers : a redis server, a redis client and a phpRedisAdmin. Simply open a terminal in "redis-docker" folder path and run `docker-compose -d up`.
-3. If you want to use your own version of Redis, you can install it [here](https://redis.io/download).
+2. A docker environment is provided to run Redis whatever your os is. See [here](https://www.docker.com) how to install docker. 
+3. The config is composed of three containers : a redis server, a redis client and a phpRedisAdmin. Simply open a terminal in "redis-docker" folder path and run `docker-compose -d up`.
+4. If you want to use your own version of Redis, you can install it [here](https://redis.io/download).
 
 ### Setup and Run
 You have two different ways of using a client interface :
