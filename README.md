@@ -50,6 +50,7 @@ Since you want to cover as much possibilties as you can, you decided to lead add
 
 #### [Oracle spatial features](https://www.oracle.com/database/technologies/spatialandgraph/spatial-features.html)
 <p align="justify">
+  This DBMS support natively geospatial data, such as geocoding/routing and map vizualisation, which merge easily with business intell     app and services. As it supports a large scale of modern application framework, it is really easy for devs to add spatial capabilities   to applications. It is standart-based SQL and Java APIs, but also JSON and REST. Offering a great query performance, partitioning,       distributed transactions and sharding, Oracle can manage large scale geospatial applications.
 </p>
 
 #### [Neo4j Spatial](https://neo4j-contrib.github.io/spatial/0.24-neo4j-3.1/index.html)
@@ -57,10 +58,13 @@ Since you want to cover as much possibilties as you can, you decided to lead add
 </p>
 
 #### [IBM cloud geospaatial](https://researcher.watson.ibm.com/researcher/view_group.php?id=9646)
+<p align="justify">
+  "In location-based applications, geospatial data — including points, polygons and linestrings — captures the location, size and shape   of real-world objects. Geospatial indexes speed up searches based on location, enabling applications to take full advantage of the       spatial relationships within data. Web and mobile developers can enhance their applications with geospatial operations, enabling         advanced location-based features, mapping functionality and situational awareness."
+</p>
 
 #### Conclusion
 <p align="justify">
-  Relationnal DBMS can manage geospatial data. However, they seem to be inadequate because of the complex structure of geometric           information and its topological relationship between sets of spacially related objects. In other words, since DBMS can only store       standart alphanumeric data types, it forces a geospacial object to be decomposed into immutable data types. This fataly leads to a       distribution of these data framgents into several columns, which complicate the formulation and efficiency of each querry.
+  Relationnal DBMS can manage geospatial data. However, they seem to be rather inadequate because of the complex structure of geometric   information and its topological relationship between sets of spacially related objects. In other words, since DBMS can only store       standart alphanumeric data types, it forces a geospacial object to be decomposed into immutable data types. This fataly leads to a       distribution of these data framgents into several columns, which complicate the formulation and efficiency of each querry. Sometimes,   some DBMS are just to big for the use-case, with a risk to put more energy on understanding their process rather than focusing on the   main use of your application.
 </p>
 I you want to read more about geospatial data in DBMS : https://www.nap.edu/read/10661/chapter/5#52
 
