@@ -1,25 +1,17 @@
 # Py-Redis-pubsub
-A simple use-case of [redis](https://redis.io/) with python for geospatial querying.
+A simple use-case of [Redis](https://redis.io/) with python for geospatial querying.
 
 
 **Since it is an exemple of use of python-redis, I encourage you to enhance it**
 
-## Project description
-As it consists in a "in and out" chat, a user is deleted from database when he disconnects, but all of his message are kept. This can be problematic since a username can be used by several people through time (only if the username isn't currently used by someone logged in the chat room). It can be improved by a simple login mechanism.
+## Context / Scenario
+You work in a digital company as a consultant. You have been assigned on a fresh new mission in which a client wishes to operate in job hunting area. As he already has his own job search engine, he had an idea to keep a certain degree of relevance : base the research in priority close to a residential place. He asked you to do a quick benchmark of geospacial-data processing methods provided by Redis, since he doesn't know yet its potential.
 
-### Chat commands
-Users can type special commands in chat. It must always begin with a "!". 
-See below the full command list :  
-* `!bestsender` : shows the user who sent the most messages in the room
-* `!nbusers` : shows the number of logged user in the room
-* `!currentusers` : prints all logged users in the room
+### How to use it
 
-### Installation
-If you don't have NodeJS installed yet, [get it here](https://nodejs.org)  
-Go to the project root folder and install dependencies by running :
-```bash
-npm install 
-```
+## Installation
+1.If you don't have Python installed yet, [get it here](https://www.python.org/downloads/)
+2.You will also need Redis to make querie, just follow [instructions](https://redis.io/download) to install it.
 
 ### Setup and Run
 1. Since Redis runs on default configurations, just open a terminal and run `redis-server`
