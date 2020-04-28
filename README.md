@@ -18,7 +18,7 @@ You work in a digital company as a consultant. You have been assigned on a fresh
 4. If you want to use your own version of Redis, you can install it [here](https://redis.io/download).
 
 ### Setup and Run
-You have two different ways of using a client interface :
+You have two different ways to use the redis client :
 1. Redis runs on default configurations with docker, just open a terminal and run `docker-compose run rcli` to get the redis client.
 2. Open a web browser and search `localhost:your_port` (8081 by default) to get the php interface.
 
@@ -35,3 +35,8 @@ GEORADIUS yourkey long lat radius km WITHCOORD WITHDIST
 <p align="justify">
 This command gives you all members which are within the radius of given coords. It only needs coords (long, lat) of a city, a radius (either in meter/km/miles/feet) and some optional parameter such as WITHCOORD/WITHDIST to diplsay informations about job ads.
 </p>  
+
+## Further on
+Since you want to cover as much possibilties as you can, you decided to lead additionnal researches to suggest other solutions to your customer if they are more suitable.
+
+### Geospatial in other main DBMS
