@@ -23,7 +23,9 @@ You have two different ways of using a client interface :
 
 ## Benchmark
 <p align="justify">
-You found out that Redis manage perfectly geospacial data, so you decided to test it out with some datasets that you found on the web (see the data folder). You're able to find all places within a given radius, with all their informations. Now, to meet your customer's expectations, you have to find out how to get job ads within a given radius around a city.
+You found out that Redis manage perfectly geospacial data, so you decided to test it out with some datasets that you found on the web (see the data folder). You're able to find all places within a given radius, with all their informations. Now, to meet your customer's expectations, you have to find out how to get job ads within a given radius around a city. You should obviously save geospatial data about your job ads in a key before doing this.
 </p>  
 
+<p align="justify">
 Pretty simple for your experienced programmer's skills. You just had to use GEORADIUS which gives you the members of your dataset which are within the radius of given coords (see [here](https://redis.io/commands/georadius) the command). It only needs coords (long, lat) of a city, a radius (either in meter/km/miles/feet) and some optional parameter such as WITHCOORD/WITHDIST/WITHASH to diplsay informations about job ads.
+</p>  
