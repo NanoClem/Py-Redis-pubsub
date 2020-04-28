@@ -37,6 +37,12 @@ This command gives you all members which are within the radius of given coords. 
 </p>  
 
 ## Further on
+<p align="justify">
 Since you want to cover as much possibilties as you can, you decided to lead additionnal researches to suggest other solutions to your customer if they are more suitable.
+</p>  
 
 ### Geospatial in other main DBMS
+
+### Elasticsearch and Kibana
+
+### PUB/SUB with Redis
