@@ -75,7 +75,7 @@ It represents a great alternative, as it does not look very complex thanks to we
 Let's assume that we decided to develop an app allowing a job seeker to subsribe to a stream by giving the name of city. It would return to him all job ads within 30km of this town.
 
 #### Pattern
-<p align="justify>
+<p align="justify">
   Since we are in a "publish-subscribe" conception, our job ads platform represents the brocker, a bridge for data delivery between the   sender and the receiver. We want to keep data about both sides, because it will give us informations about habits and behavior, with     the aim to find a trend.
 </p>
 
