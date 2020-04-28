@@ -11,15 +11,13 @@ You work in a digital company as a consultant. You have been assigned on a fresh
 
 ### Installation
 1. If you don't have Python installed yet, [get it here](https://www.python.org/downloads/)
-2. A docker environment is provided to run Redis whatever your os is. It is composed of three containers : a redis server, a redis client and a phpRedisAdmin. Simply open a terminal in "redis-docker" folder path and run `docker-compose -d up`.  
-
-If you just want to use your own version of Redis, you can install it [here](https://redis.io/download)
+2. A docker environment is provided to run Redis whatever your os is. It is composed of three containers : a redis server, a redis client and a phpRedisAdmin. Simply open a terminal in "redis-docker" folder path and run `docker-compose -d up`.
+3. If you want to use your own version of Redis, you can install it [here](https://redis.io/download)
 
 ### Setup and Run
-1. Since Redis runs on default configurations, just open a terminal and run `redis-server`
-2. Init MongoDB with `mongod --port 3000 --dbpath your_data_folder_path`
-3. Note that you can make replica sets in MongoDB for more fault tolerance, [see here how to do it](https://docs.mongodb.com/manual/replication)
-4. You are now free to run the app ! Go to the project root folder and run `node server/server.js`
+You have two different ways of using a client interface :
+1. Since Redis runs on default configurations, just open a terminal and run `docker-compose run rcli`
+2. Open a web browser and search `localhost:your_port` (8081 by default)
 
 ## Possible improvements
 * Make multiple chat room and the possibility to switch betwwen each other
