@@ -26,6 +26,7 @@ You have two different ways of using a client interface :
 You found out that Redis manage perfectly geospacial data, so you decided to test it out with some datasets that you found on the web (see the data folder). You're able to find all places within a given radius, with all their informations. Now, to meet your customer's expectations, you have to find out how to get job ads within a given radius around a city. You should obviously save geospatial data about your job ads in a key before doing this.
 </p>  
 
+### Get all job ads within a radius around a city
 Pretty simple for your experienced programmer's skills. You just used :
 ```bash
 GEORADIUS yourkey long lat radius km WITHCOORD WITHDIST
