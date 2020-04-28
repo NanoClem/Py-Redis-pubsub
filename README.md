@@ -48,13 +48,15 @@ Since you want to cover as much possibilties as you can, you decided to lead add
   It is a spatial database extender for PostgreSQL object-relationnal database. It adds support for geographic objects allowing location   queries to be run in SQL. Could be useful to associate as much information (metadata) as you want to a location, since it just adds a   geographic dimension to sql objects.
 </p>
 
-#### Oracle spatial features
+#### [Oracle spatial features](https://www.oracle.com/database/technologies/spatialandgraph/spatial-features.html)
 <p align="justify">
-  
 </p>
-#### Neo4j Spatial
 
-####
+#### [Neo4j Spatial](https://neo4j-contrib.github.io/spatial/0.24-neo4j-3.1/index.html)
+<p align="justify">
+</p>
+
+#### [IBM cloud geospaatial](https://researcher.watson.ibm.com/researcher/view_group.php?id=9646)
 
 #### Conclusion
 <p align="justify">
