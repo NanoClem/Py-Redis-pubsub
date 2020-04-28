@@ -53,10 +53,6 @@ Since you want to cover as much possibilties as you can, you decided to lead add
   This DBMS support natively geospatial data, such as geocoding/routing and map vizualisation, which merge easily with business intell     app and services. As it supports a large scale of modern application framework, it is really easy for devs to add spatial capabilities   to applications. It is standart-based SQL and Java APIs, but also JSON and REST. Offering a great query performance, partitioning,       distributed transactions and sharding, Oracle can manage large scale geospatial applications.
 </p>
 
-#### [Neo4j Spatial](https://neo4j-contrib.github.io/spatial/0.24-neo4j-3.1/index.html)
-<p align="justify">
-</p>
-
 #### [IBM cloud geospaatial](https://researcher.watson.ibm.com/researcher/view_group.php?id=9646)
 <p align="justify">
   "In location-based applications, geospatial data — including points, polygons and linestrings — captures the location, size and shape   of real-world objects. Geospatial indexes speed up searches based on location, enabling applications to take full advantage of the       spatial relationships within data. Web and mobile developers can enhance their applications with geospatial operations, enabling         advanced location-based features, mapping functionality and situational awareness."
@@ -69,5 +65,9 @@ Since you want to cover as much possibilties as you can, you decided to lead add
 I you want to read more about geospatial data in DBMS : https://www.nap.edu/read/10661/chapter/5#52
 
 ### Elasticsearch and Kibana
+<p align="justify">
+  Elasticsearch offers a great flexibility when it's about data types. It can manage different types of queries and even merge them.       Providing very fast results whatever the type or the conception, Elasticsearch allows you to personalize your environment (store as     much metadata as you want) in order be best suited to your needs. Paired with Kibana map solution, it makes possible an intuitive       integration of geospatial data layers into temporal data. With this tool, you can build your own personalized dashboard and see the     evolution of your data in real-time.  
+  It represents a great alternative, as it does not look very complex thanks to well documented solutions and its user-friendly           interfaces.
+</p>
 
 ### PUB/SUB with Redis
