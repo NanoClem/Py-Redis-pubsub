@@ -1,36 +1,32 @@
 import redis
-import json
 import random
 import pandas as pd
 
-HOST = '127.0.0.1'
-PORT = 6379
-r = redis.Redis(host=HOST, port=PORT)
 
 
-
-def m_addHMSET(keyname: str, df: pd.DataFrame) -> list:
+def m_addHMSET(r: redis.Redis, keyname: str, indexField: str, records: list) -> list:
     """ Export multiple records from a dataframe to a redis hashset.
 
     Parameters
     -----
+    `r` redis server connection \n
     `keyname` key on which geo records will be indexed on redis \n
-    `df` dataframe containing geo records \n
+    `records` list containing geo records \n
     
     Returns
     -----
     A List describing the number of inserted elements for each record
     """
     # format data
-    df = df.to_dict('records')
     random.seed(444)
-    data = {f"%s:{random.getrandbits(32)}" % keyname : i for i in df}
+    data = {f"%s:{random.getrandbits(32)}" % keyname : i for i in records}
 
     # insertion
     with r.pipeline() as pipe:
         try:
             for id, d in data.items():
-                pipe.hmset(id, d)
+                pipe.hmset(id, d)               # set hash
+                pipe.sadd(d[indexField], id)    # index it by field value
         except redis.exceptions.ResponseError as resp_err:
             print(resp_err)
         finally:
@@ -38,11 +34,38 @@ def m_addHMSET(keyname: str, df: pd.DataFrame) -> list:
 
 
 
-def exportToGeo(keyname: str, lat: float, lon: float, place: str) -> bool:
+def addHMSET(r: redis.Redis, keyname: str, mapping: dict) -> int:
+    """
+    """
+    ret = 0
+    try:
+        ret = r.hmset(keyname, mapping)
+    except redis.exceptions.ResponseError as resp_err:
+        print(resp_err)
+    finally:
+        return ret
+
+
+
+def addSET(r: redis.Redis, keyname: str, members: list) -> bool:
+    """
+    """
+    ret = 0
+    try:
+        ret = r.sadd(keyname, *members)
+    except redis.exceptions.ResponseError as resp_err:
+        print(resp_err)
+    finally:
+        return ret
+
+
+
+def exportToGeo(r: redis.Redis, keyname: str, lat: float, lon: float, place: str) -> int:
     """ Export a single geo record to redis.
 
     Parameters
     -----
+    `r` redis server connection \n
     `keyname` key on which geo records will be indexed on redis \n
     `lon` longitude \n
     `lat` atitude \n
@@ -62,11 +85,12 @@ def exportToGeo(keyname: str, lat: float, lon: float, place: str) -> bool:
 
 
 
-def m_exportToGeo(df: pd.DataFrame, keyname: str, long_name: str, lat_name: str, loc_name: str) -> list:
+def m_exportToGeo(r: redis.Redis, df: pd.DataFrame, keyname: str, long_name: str, lat_name: str, loc_name: str) -> list:
     """ Export multiple geo records from a dataframe to redis.
 
     Parameters
     -----
+    `r` redis server connection \n
     `df` dataframe containing geo records \n
     `keyname` key on which geo records will be indexed on redis \n
     `long_name` colname of longitude in df \n
@@ -90,11 +114,12 @@ def m_exportToGeo(df: pd.DataFrame, keyname: str, long_name: str, lat_name: str,
 
 
 
-def getGeoPos(keyname: str, place: str) -> tuple:
+def getGeoPos(r: redis.Redis, keyname: str, place: str) -> tuple:
     """ Returns the geo-position of a given stored place.
 
     Parameters
     -----
+    `r` redis server connection \n
     `keyname` key on which geo records will be indexed on redis \n
     `place` location name
 
@@ -113,12 +138,13 @@ def getGeoPos(keyname: str, place: str) -> tuple:
     
 
 
-def getDist(keyname: str, loc1: str, loc2: str, unit: str) -> float:
+def getDist(r: redis.Redis, keyname: str, loc1: str, loc2: str, unit: str) -> float:
     """ Get the distance between two places.
     Resulting value can be either in meter, km, miles or feet.
 
     Parameters
     -----
+    `r` redis server connection \n
     `keyname` key on which geo records will be indexed on redis \n
     `loc1` first location \n
     `loc2` second location \n
@@ -128,17 +154,21 @@ def getDist(keyname: str, loc1: str, loc2: str, unit: str) -> float:
 
 
 
-def getInRadius(keyname: str, member: str, radius: int, unit: str):
-    """
+def getInRadiusByMember(r: redis.Redis, keyname: str, member: str, radius: int, unit: str, withdist=False, withcoord=False):
+    """ Get the distance between two places.
+    Resulting value can be either in meter, km, miles or feet.
+
+    Parameters
+    -----
+    `r` redis server connection \n
+    `keyname` key on which geo records will be indexed on redis \n
+    `member` name of place indexed in the same key \n
+    `radius` radius defining limits of the area \n
+    `unit`(m, km, mi, ft) result unit
     """
     ret = []
     try:
-        # get members in radius with their distance and coords
-        result = r.georadiusbymember(keyname, member, radius, unit=unit, withdist=True, withcoord=True)
-        if result :
-            for res in result:
-                tmp = {'member': res[0].decode("utf-8") , 'distance': res[1], "coords": res[2]}
-                ret.append(tmp)
+        ret = r.georadiusbymember(keyname, member, radius, unit=unit, withdist=withcoord, withcoord=withcoord)
     except KeyError as k_err:
             print(k_err)
     except redis.exceptions.ResponseError as resp_err:
