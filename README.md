@@ -7,9 +7,9 @@ A simple use-case of [Redis](https://redis.io/) with python for geospatial query
 ## Context / Scenario
 You work in a digital company as a consultant. You have been assigned on a fresh new mission in which a client wishes to operate in job hunting area. As he already has his own job search engine, he had an idea to keep a certain degree of relevance : base the research in priority close to a residential place. He asked you to do a quick benchmark of geospacial-data processing methods provided by Redis, since he doesn't know yet its potential.
 
-### How to use it
+## How to use it
 
-## Installation
+### Installation
 1.If you don't have Python installed yet, [get it here](https://www.python.org/downloads/)
 2.You will also need Redis to make querie, just follow [instructions](https://redis.io/download) to install it.
 
