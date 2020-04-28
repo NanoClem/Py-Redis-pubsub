@@ -2,7 +2,7 @@
 A simple use-case of [Redis](https://redis.io/) with python for geospatial querying.
 
 
-**Since it is an exemple of use of python-redis, I encourage you to enhance it**
+**Since it is an exemple of use of python-redis, I encourage you to enhance it. This is NOT a tutorial for Redis or python-redis.**
 
 ## Context / Scenario
 <p align="justify">
@@ -23,5 +23,7 @@ You have two different ways of using a client interface :
 
 ## Benchmark
 <p align="justify">
-You found out that Redis manage perfectly geospacial data, so you decided to test it out with some datasets that you found on the web (see the data folder). You're able to find all places within a given radius, with all their informations. Now, to meet your customer's expectations, you have to find out how to get job ad within a given radius around a city.
-</p>
+You found out that Redis manage perfectly geospacial data, so you decided to test it out with some datasets that you found on the web (see the data folder). You're able to find all places within a given radius, with all their informations. Now, to meet your customer's expectations, you have to find out how to get job ads within a given radius around a city.
+</p>  
+
+Pretty simple for your experienced programmer's skills. You just had to use GEORADIUS which gives you the members of your dataset which are within the radius of given coords (see [here](https://redis.io/commands/georadius) the command). It only needs coords (long, lat) of a city, a radius (either in meter/km/miles/feet) and some optional parameter such as WITHCOORD/WITHDIST/WITHASH to diplsay informations about job ads.
