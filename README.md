@@ -16,10 +16,7 @@ You work in a digital company as a consultant. You have been assigned on a fresh
 
 ### Setup and Run
 You have two different ways of using a client interface :
-1. Since Redis runs on default configurations, just open a terminal and run `docker-compose run rcli`
-2. Open a web browser and search `localhost:your_port` (8081 by default)
+1. Redis runs on default configurations with docker, just open a terminal and run `docker-compose run rcli` to get the redis client.
+2. Open a web browser and search `localhost:your_port` (8081 by default) to get the php interface.
 
-## Possible improvements
-* Make multiple chat room and the possibility to switch betwwen each other
-* Add a login mechanism to avoid any filthy identity theft
-* Add more chat commands to display useful information about the chat room
+## Benchmark
