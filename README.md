@@ -60,7 +60,7 @@ Since you want to cover as much possibilties as you can, you decided to lead add
 
 #### Conclusion
 <p align="justify">
-  Relationnal DBMS can manage geospatial data. However, they seem to be rather inadequate because of the complex structure of geometric   information and its topological relationship between sets of spacially related objects. In other words, since DBMS can only store       standart alphanumeric data types, it forces a geospacial object to be decomposed into immutable data types. This fataly leads to a       distribution of these data framgents into several columns, which complicate the formulation and efficiency of each querry. Sometimes,   some DBMS are just to big for the use-case, with a risk to put more energy on understanding their process rather than focusing on the   main use of your application.
+  Relationnal DBMS can manage geospatial data. However, they seem to be rather inadequate because of the complex structure of geometric   information and its topological relationship between sets of spacially related objects. In other words, since DBMS can only store       standart alphanumeric data types, it forces a geospacial object to be decomposed into immutable data types. This fataly leads to a       distribution of these data framgents into several columns, which complicate the formulation and efficiency of each querry. Sometimes,   some DBMS are just "overkilled" for the use-case, with a risk to put more energy on understanding their process rather than focusing on the   main use of your application.
 </p>
 I you want to read more about geospatial data in DBMS : https://www.nap.edu/read/10661/chapter/5#52
 
@@ -72,3 +72,9 @@ I you want to read more about geospatial data in DBMS : https://www.nap.edu/read
 It represents a great alternative, as it does not look very complex thanks to well documented solutions and its user-friendly           interfaces. Read more about Elasticsearch and Kibana for geospatial data : https://www.elastic.co/fr/maps
 
 ### PUB/SUB with Redis
+Let's assume that we decided to develop an app allowing a job seeker to subsribe to a stream by giving the name of city. It would return to him all job ads within 30km of this town.
+
+#### Pattern
+<p align="justify>
+  Since we are in a "publish-subscribe" conception, our job ads platform represents the brocker, a bridge for data delivery between the   sender and the receiver. We want to keep data about both sides, because it will give us informations about habits and behavior, with     the aim to find a trend.
+</p>
