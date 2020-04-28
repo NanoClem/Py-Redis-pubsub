@@ -41,14 +41,18 @@ This command gives you all members which are within the radius of given coords. 
 Since you want to cover as much possibilties as you can, you decided to lead additionnal researches to suggest other solutions to your customer if they are more suitable.
 </p>  
 
-### Geospatial in other main DBMS
+### Geospatial in other main relationnal DBMS
 
 #### PostGIS
 <p align="justify">
 It is a spatial database extender for PostgreSQL object-relationnal database. It adds support for geographic objects allowing location queries to be run in SQL. Could be useful to associate as much information (metadata) as you want to a location, since it just adds a geographic dimension to sql objects.
 </p>
 
-####
+#### Conclusion
+<p align="justify">
+Relationnal DBMS can manage geospatial data. However, they seem to be inadequate because of the complex structure of geometric information and its topological relationship between sets of spacially related objects. In other words, since DBMS can only store standart alphanumeric data types, it forces a geospacial object to be decomposed into immutable data types. This fataly leads to a distribution of these data framgents into several columns, which complicate the formulation and efficiency of each querry.
+[ref](https://www.nap.edu/read/10661/chapter/5#52)
+</p>
 
 ### Elasticsearch and Kibana
 
