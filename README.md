@@ -75,11 +75,11 @@ Let's assume that we decided to develop an app allowing a job seeker to subsribe
 
 #### Pattern
 <p align="justify">
-  Since we are in a "publish-subscribe" conception, our job ads platform represents the brocker, a bridge for data delivery between the   sender and the receiver. We want to keep data about both sides, because it will give us informations about habits and behavior, with     the aim to find a trend.
+  Since we are in a "publish-subscribe" conception, our job ads platform represents the brocker, a bridge for data delivery between the   sender and the receiver. At best, we want to keep data about both sides, because it will give us informations about habits and           behavior, with the aim to find a trend.
 </p>
 
 #### Implementation
-You can run the docker configuration to get a full Redis environment. The idea would subscribing to all towns within 35km and getting data every time a job ad is publishedd in one of these. 
+The idea now would subscribing to all towns within 35km and getting data every time a job ad is publishedd in one of these :
 ```python
 # set our config
 req = {
@@ -92,4 +92,10 @@ req = {
 receiver = StreamListener(**req)
 receiver.start()
 ```
-See the full code [here](https://github.com/NanoClem/Py-Redis-pubsub/blob/master/pubsub/pubsub.py)
+Full code [here](https://github.com/NanoClem/Py-Redis-pubsub/blob/master/pubsub/pubsub.py)
+
+You can test it out by running the above code, then opening a redis client in a new terminal (see "How to use it") and type :
+```bash
+PUBLISH Amiens digital_consultant
+```
+
