@@ -28,14 +28,12 @@ You found out that Redis manages perfectly geospacial data, so you decided to te
 </p>  
 
 ### Get all job ads within a radius around a city
-Pretty simple for your experienced programmer's skills. When exporting your 'jobs.csv' dataset, you just had to index the 'ville' field in a set to know which job ad is in which city :
+Pretty simple for your experienced programmer's skills. When exporting your 'jobs.csv' dataset, you decided to index the 'ville' field in a set to know which job ad is in which city :
 ```bash
 HMSET jobs:1161166 offer digital_consultant city Amiens   # set our jobs ad hash
 SADD Amiens jobs:1161166                                  # index it by city name
 ```
-<p align="justify">
-This command gives you all members which are within the radius of given coords. It only needs coords (long, lat) of a city, a radius (either in meter/km/miles/feet) and some optional parameter such as WITHCOORD/WITHDIST to diplsay informations about job ads.
-</p>  
+Then, you just had to get all cities within the range of your given city with [GEORADIUSBYMEMBER](https://redis.io/commands/georadiusbymember), and then perform a [GETSET](https://redis.io/commands/getset) on every city in range to get all your job ads.
 
 ## Further on
 <p align="justify">
