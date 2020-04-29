@@ -24,13 +24,14 @@ You have two different ways to use the redis client :
 
 ## Benchmark
 <p align="justify">
-You found out that Redis manages perfectly geospacial data, so you decided to test it out with some datasets that you found on the web (see the data folder). You're able to find all places within a given radius, with all their informations. Now, to meet your customer's expectations, you have to find out how to get job ads within a given radius around a city. You should obviously save geospatial data about your job ads in a key before doing this.
+You found out that Redis manages perfectly geospacial data, so you decided to test it out with some datasets that you found on the web (see the data folder). You're able to find all places within a given radius, with all their informations. Now, to meet your customer's expectations, you have to find out how to get job ads within a given radius around a city. You should obviously save geospatial data about some cities before doing this.
 </p>  
 
 ### Get all job ads within a radius around a city
-Pretty simple for your experienced programmer's skills. You just used [this](https://redis.io/commands/georadius) :
-```bash
-GEORADIUS yourkey long lat radius km WITHCOORD WITHDIST
+Pretty simple for your experienced programmer's skills. When exporting your 'jobs.csv' dataset, you just had to index the 'ville' field in a set to know which job ad is in which city :
+```python
+HMSET jobs:1161166 offer digital_consultant city Amiens   # set our jobs ad hash
+SADD Amiens jobs:1161166                                  # index it by city name
 ```
 <p align="justify">
 This command gives you all members which are within the radius of given coords. It only needs coords (long, lat) of a city, a radius (either in meter/km/miles/feet) and some optional parameter such as WITHCOORD/WITHDIST to diplsay informations about job ads.
@@ -80,7 +81,7 @@ Let's assume that we decided to develop an app allowing a job seeker to subsribe
 </p>
 
 ### Implementation
-You can run the docker configuration to get a full Redis environment.  
+You can run the docker configuration to get a full Redis environment. To implement this, the idea would subscribing to all towns within 35km and getting data every time a job ad is publishedd in one of these.
 
 The first step is to create our receiver :
 ```python
