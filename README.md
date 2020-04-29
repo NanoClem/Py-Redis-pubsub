@@ -29,7 +29,7 @@ You found out that Redis manages perfectly geospacial data, so you decided to te
 
 ### Get all job ads within a radius around a city
 Pretty simple for your experienced programmer's skills. When exporting your 'jobs.csv' dataset, you just had to index the 'ville' field in a set to know which job ad is in which city :
-```python
+```bash
 HMSET jobs:1161166 offer digital_consultant city Amiens   # set our jobs ad hash
 SADD Amiens jobs:1161166                                  # index it by city name
 ```
