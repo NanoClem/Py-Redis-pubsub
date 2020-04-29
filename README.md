@@ -78,23 +78,18 @@ Let's assume that we decided to develop an app allowing a job seeker to subsribe
   Since we are in a "publish-subscribe" conception, our job ads platform represents the brocker, a bridge for data delivery between the   sender and the receiver. We want to keep data about both sides, because it will give us informations about habits and behavior, with     the aim to find a trend.
 </p>
 
-### Implementation
-You can run the docker configuration to get a full Redis environment. To implement this, the idea would subscribing to all towns within 35km and getting data every time a job ad is publishedd in one of these.
-
-The first step is to create our receiver :
+#### Implementation
+You can run the docker configuration to get a full Redis environment. The idea would subscribing to all towns within 35km and getting data every time a job ad is publishedd in one of these. 
 ```python
-# connect with redis server as job_seeker (default configs)
-r1 = redis.Redis(host='localhost', port=6379)
-job_seeker = r1.pubsub()
-# subscribe to any offer within 30km of the given place
-job_seeker.subscribe('job_ads')
+# set our config
+req = {
+  'keyname': key,
+  'location': 'Amiens',
+  'radius': 35,
+  'unit': 'km'
+}
+# listening every publication within our range
+receiver = StreamListener(**req)
+receiver.start()
 ```
-
-Then, we should create our sender :
-```python
-# connect with redis server as job_advertiser (default configs)
-r2 = redis.Redis(host='localhost', port=6379)
-# create a job add and publish it
-new_ad = 
-job_adv.publish('job_ads', new_ad)
-```
+See the full code [here](https://github.com/NanoClem/Py-Redis-pubsub/blob/master/pubsub/pubsub.py)
