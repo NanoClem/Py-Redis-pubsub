@@ -168,7 +168,7 @@ def getInRadiusByMember(r: redis.Redis, keyname: str, member: str, radius: int, 
     """
     ret = []
     try:
-        ret = r.georadiusbymember(keyname, member, radius, unit=unit, withdist=withcoord, withcoord=withcoord)
+        ret = r.georadiusbymember(keyname, member, radius, unit=unit, withdist=withdist, withcoord=withcoord)
     except KeyError as k_err:
             print(k_err)
     except redis.exceptions.ResponseError as resp_err:
