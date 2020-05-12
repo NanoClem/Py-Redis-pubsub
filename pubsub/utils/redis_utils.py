@@ -154,7 +154,7 @@ def getDist(r: redis.Redis, keyname: str, loc1: str, loc2: str, unit: str) -> fl
 
 
 
-def getInRadiusByMember(r: redis.Redis, keyname: str, member: str, radius: int, unit: str, withdist=False, withcoord=False):
+def getInRadiusByMember(r: redis.Redis, keyname: str, member: str, radius: int, unit: str, withdist=False, withcoord=False) -> list:
     """ Get the distance between two places.
     Resulting value can be either in meter, km, miles or feet.
 
